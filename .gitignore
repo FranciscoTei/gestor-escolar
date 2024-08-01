@@ -46,7 +46,7 @@
 *.mod*
 *.cmd
 .tmp_versions/
-ccls-cache/
+.ccls-cache/
 modules.order
 Module.symvers
 Mkfile.old
