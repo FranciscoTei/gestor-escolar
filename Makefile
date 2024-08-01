@@ -21,3 +21,17 @@ main-debug: $(SRCS) $(HEADERS)
 # Regra para limpar os arquivos compilados
 clean:
 	rm -f main main-debug
+
+# Adicionando a regra para criar as tabelas
+create-tables: $(SRCS) $(HEADERS)
+	@rm -f data/database/escolaa.db
+	$(CC) $(CFLAGS) -x c -o /tmp/create_models_temp data/database/create_tables.c -lsqlite3
+	/tmp/create_models_temp
+	rm -f /tmp/create_models_temp
+	
+# Regra para inserir dados no banco de dados
+insert-data:
+	sqlite3 data/database/escola.db < data/database/insert_data.sql
+
+# Regra para criar tabelas e inserir dados
+setup: create-tables insert-data

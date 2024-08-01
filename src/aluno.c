@@ -35,7 +35,7 @@ void cadastrarAluno(struct Aluno* v, int* qtd) {
     printf("\n✅ Cadastro efetuado com sucesso.\n");
 }
 
-void listarAlunos(struct Aluno* v, int qtd) {
+void listarAlunoss(struct Aluno* v, int qtd) {
     printf("\nTabela de alunos cadastrados: \n");
     for (int i = 0; i < qtd; i++) {
         printf("Aluno: %d %s %.2f\n", v[i].mat, v[i].nome, v[i].media);
